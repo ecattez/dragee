@@ -22,6 +22,7 @@
         <module>ddd-annotations</module>
         <module>annotation-processor</module>
         <module>bom</module>
+        <module>clean-architecture-annotations</module>
     </modules>
 
     <properties>
