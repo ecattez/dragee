@@ -16,7 +16,22 @@ public @interface Clean {
     @Inherited
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.SOURCE)
-    @interface Presenter {
+    @interface Controller {
+    }
 
+    @Clean
+    @Documented
+    @Inherited
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface Presenter {
+    }
+
+    @Clean
+    @Documented
+    @Inherited
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.SOURCE)
+    @interface UseCase {
     }
 }

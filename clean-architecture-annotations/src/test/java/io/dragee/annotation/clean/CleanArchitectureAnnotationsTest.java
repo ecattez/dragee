@@ -18,7 +18,9 @@ public class CleanArchitectureAnnotationsTest {
 
     private static Compiler.Result executeProcessor() {
         Compiler compiler = Compiler.compileTestClasses(
-                SOURCE_FOLDER.resolve("APresenter.java")
+                SOURCE_FOLDER.resolve("AController.java"),
+                SOURCE_FOLDER.resolve("APresenter.java"),
+                SOURCE_FOLDER.resolve("AUseCase.java")
         );
 
         return compiler.executeProcessor();
@@ -30,7 +32,9 @@ public class CleanArchitectureAnnotationsTest {
 
     @ParameterizedTest
     @CsvSource({
+            "AController, controller",
             "APresenter, presenter",
+            "AUseCase, usecase",
     })
     void dragee_matches_approval_one(String expectedFileName, String approvalFileName) {
         Compiler.Result actualResult = executeProcessor();
